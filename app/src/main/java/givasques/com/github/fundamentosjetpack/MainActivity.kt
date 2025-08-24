@@ -14,6 +14,7 @@ import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.tooling.preview.Preview
 import givasques.com.github.fundamentosjetpack.ui.theme.FundamentosjetpackTheme
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,12 +22,20 @@ class MainActivity : ComponentActivity() {
         setContent {
             FundamentosjetpackTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Text (
-                        text = getString(R.string.hello_world),
+                    TextoCustomizado (
+                        "Primeira função composable",
                         modifier = Modifier.padding (innerPadding)
                     )
                 }
             }
         }
+    }
+
+    @Composable
+    fun TextoCustomizado (texto: String, modifier: Modifier) {
+        Text (
+            text = texto,
+            modifier = modifier.fillMaxSize()
+        )
     }
 }
