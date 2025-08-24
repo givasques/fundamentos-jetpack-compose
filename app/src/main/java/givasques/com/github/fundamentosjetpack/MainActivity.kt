@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.modifier.ModifierLocalReadScope
 import androidx.compose.ui.tooling.preview.Preview
 import givasques.com.github.fundamentosjetpack.ui.theme.FundamentosjetpackTheme
 
@@ -22,20 +23,30 @@ class MainActivity : ComponentActivity() {
         setContent {
             FundamentosjetpackTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TextoCustomizado (
-                        "Primeira função composable",
-                        modifier = Modifier.padding (innerPadding)
-                    )
+                    Inicial(Modifier.padding(innerPadding))
                 }
             }
         }
     }
 
     @Composable
-    fun TextoCustomizado (texto: String, modifier: Modifier) {
+    fun Inicial(modifier: Modifier = Modifier) {
+        TextoCustomizado("Primeira função composable", modifier)
+    }
+
+    @Composable
+    fun TextoCustomizado (texto: String, modifier: Modifier = Modifier) {
         Text (
             text = texto,
-            modifier = modifier.fillMaxSize()
+            modifier = modifier
         )
+    }
+
+    @Preview(showBackground = true)
+    @Composable
+    fun PreviewFuncaoInicial() {
+        FundamentosjetpackTheme {
+            Inicial()
+        }
     }
 }
