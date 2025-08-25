@@ -1,9 +1,9 @@
-#Nomes e RMs 
+# Nomes e RMs 
 
 - Giovanna Vasques Alexandre - RM 99884
 - Wemilli Nataly Lima de Oliveira - RM 552301
 
-#Entendendo o código
+# Entendendo o código
 
 ## Arquivo Text.kt
 
