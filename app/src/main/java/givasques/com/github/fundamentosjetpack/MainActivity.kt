@@ -33,6 +33,8 @@ import androidx.compose.ui.unit.dp
 import givasques.com.github.fundamentosjetpack.ui.theme.FundamentosjetpackTheme
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import givasques.com.github.fundamentosjetpack.componentes.SimpleOutlineTextField
+import givasques.com.github.fundamentosjetpack.componentes.SimpleTextField
 
 
 class MainActivity : ComponentActivity() {
@@ -42,7 +44,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             FundamentosjetpackTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CardMensagem(Modifier.padding(innerPadding))
+                    // CardMensagem(Modifier.padding(innerPadding))
+                    // SimpleTextField(Modifier.padding(innerPadding))
+                    SimpleOutlineTextField(Modifier.padding(innerPadding))
                 }
             }
         }
