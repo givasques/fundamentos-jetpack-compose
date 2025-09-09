@@ -1,6 +1,7 @@
 package givasques.com.github.fundamentosjetpack.componentes
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -18,6 +19,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
@@ -44,10 +49,11 @@ fun SimpleOutlineTextField(modifier: Modifier = Modifier) {
             label = { Text(text = "Nome") },
             isError = isError1,
             singleLine = true,
-            textStyle = TextStyle(
-                color = Color.Blue,
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
+            keyboardOptions = KeyboardOptions(
+                capitalization = KeyboardCapitalization.Words,
+                autoCorrect = true,
+                keyboardType = KeyboardType.Text,
+                imeAction = ImeAction.Search
             )
         )
 
@@ -66,6 +72,7 @@ fun SimpleOutlineTextField(modifier: Modifier = Modifier) {
             },
             label = { Text(text = "Sobrenome") },
             singleLine = true,
+            visualTransformation = PasswordVisualTransformation()
         )
     }
 }
